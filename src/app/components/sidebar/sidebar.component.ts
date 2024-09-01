@@ -9,13 +9,16 @@ interface ISidebarMenu {
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
-  styleUrls: ['./sidebar.component.scss']
+  styleUrls: ['./sidebar.component.scss'],
 })
 export class SidebarComponent {
   loopedLis: ISidebarMenu[] = [];
-
+  openedSideNav: boolean = false;
   ngOnInit(): void {
     this.generateMenuItems();
+  }
+  openedSide() {
+    this.openedSideNav = !this.openedSideNav;
   }
 
   generateMenuItems() {
@@ -60,5 +63,4 @@ export class SidebarComponent {
         : 'fa-solid fa-chevron-down';
     }
   }
-  
 }
