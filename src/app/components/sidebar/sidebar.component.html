@@ -1,0 +1,59 @@
+<div class="container-fluid">
+  <div class="row flex-nowrap">
+    <div
+      class="col-auto col-md-3 col-xl-2 px-sm-2 px-0 bg-dark d-none d-sm-inline"
+    >
+      <div
+        class="d-flex flex-column align-items-center align-items-sm-start px-3 pt-2 text-white min-vh-100"
+      >
+        <a
+          href="/"
+          class="d-flex align-items-center pb-3 mb-md-0 me-md-auto text-white text-decoration-none"
+        >
+          <span class="fs-5 d-none d-sm-inline">Menu</span>
+        </a>
+        <ul
+          class="nav list-unstyled nav-pills flex-column mb-sm-auto mb-0 align-items-center align-items-sm-start w-100"
+          id="menu"
+        >
+          <li
+            class="nav-item list-unstyled w-100"
+            *ngFor="let li of loopedLis; let i = index"
+            [class.opened-li]="li.isOpened"
+          >
+            <a
+              role="button"
+              (click)="toggleCollapse(li, i)"
+              class="nav-link align-middle px-0 text-white d-flex align-items-center justify-content-between"
+            >
+              <span class="ms-1 d-none d-sm-inline">
+                <span>{{ li.textField.emoji }}</span>
+                <span>{{ li.textField.text }}</span>
+              </span>
+              <i [class]="li?.icon"></i>
+            </a>
+            <ul class="submenu list-unstyled">
+              <li class="px-4" *ngFor="let subItem of li.subItems">
+                {{ subItem }}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col py-3">
+      <h3>Left Sidebar with Submenus</h3>
+      <p class="lead">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Inventore illo
+        quod corrupti aut repellat voluptate atque architecto quam possimus
+        labore repudiandae, nostrum alias ad dolore tempore eos porro eaque
+        beatae?
+      </p>
+      <ul class="list-unstyled">
+        <li>
+          <h5>Responsive</h5>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+ul li ul {
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s linear;
+  }
+  
+  ul li.opened-li ul {
+    height: 50px
+  }
+  
